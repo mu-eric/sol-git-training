@@ -1,4 +1,5 @@
 import module as m
+import time
 
 while True:
     print('---------------------------')
@@ -31,3 +32,6 @@ while True:
             break
         case _:
             print(f'Invalid selection: {selection}')
+
+    time.sleep(5)
+    print('Returning to main menu in 5 seconds...')
