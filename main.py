@@ -20,8 +20,10 @@ while True:
         case '2':
             try:
                 user_input = float(input('Enter a value: '))
-                result = m.tolerance_check(user_input)
-                print(f'The value ({user_input}) entered {'is' if result else 'is not'} within tolerance.')
+                tolerance = 1.00
+                reference = 12.00
+                result = m.tolerance_check(user_input, reference=reference, tolerance=tolerance)
+                print(f'The value ({user_input}) entered {'is' if result else 'is not'} within tolerance. (tolerance=1.00, reference=12.00)')
             except Exception as Ex:
                 print(f'Exception occured: {Ex}, enter a different value.')
         case '3':
