@@ -37,5 +37,25 @@ def tolerance_check(input: float, reference: float = 12.00, tolerance: float = 0
 
     return diff <= tolerance
 
+def asset_type_check(asset_type: str) -> bool:
+    """
+    Function to check if an asset type is valid.
+
+    Parameters
+    ---------
+    asset_type : str
+        Asset type category.
+
+    Returns
+    ---------
+    bool
+        True if valid asset type, False if not.
+    """
+    valid_types = ['pipe', 'bend', 'valve']
+
+    if asset_type.lower() not in valid_types:
+        return False
+    return True
+
 if __name__ == "__main__":
     pass
