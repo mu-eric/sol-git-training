@@ -23,14 +23,19 @@ while True:
                 tolerance = 1.00
                 reference = 12.00
                 result = m.tolerance_check(user_input, reference=reference, tolerance=tolerance)
-                print(f'The value ({user_input}) entered {'is' if result else 'is not'} within tolerance. (tolerance={tolerance}, reference={reference})')
+                print(f'The value ({user_input}) entered {'is' if result else 'is not'} within tolerance. (tol={tolerance}, ref={reference})')
             except Exception as Ex:
                 print(f'Exception occured: {Ex}, enter a different value.')
         case '3':
-            asset_type = input('Enter a asset type name: ')
+            asset_type = input('Enter a asset type: ')
             result = m.asset_type_check(asset_type)
             print(f'{asset_type} is {'a known' if result else 'not a known'} asset type')
-        case '4':
+        case '4':        
+            count = 3
+            for t in range(3):
+                print(f'Exiting in {count} seconds...')
+                time.sleep(1)
+                count = count - 1
             break
         case _:
             print(f'Invalid selection: {selection}')
